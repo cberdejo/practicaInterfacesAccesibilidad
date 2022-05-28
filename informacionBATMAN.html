@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="css/informacion.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="jquery-ui-1.13.1/jquery-ui.css">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="jquery-ui-1.13.1/jquery-ui.js"></script>
+  <script src="js/rangoHora.js"></script>
+  <script src="js/guardarCargarPelicula.js"></script>
+  <script src="js/leerMas.js"></script>
+
+  <title>BATMAN</title>
+</head>
+
+<body>
+
+  <header class="p-3 bg-black bg-opacity-25">
+    <div class="container-flex d-grid gap-3 mainContent">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="index.html" class="d-flex align-items-center mb-3 mb-md-auto me-md-auto text-dark text-decoration-none">
+          <img class="bi me-2" src="images/logo.svg" width="40" height="32"></img>
+          <span class="fs-4 ">Cartelera</span>
+        </a>
+
+        <div>
+          Bienvenido a cines Loquesea
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+
+
+
+
+  <div class="container-fluid p-5 maxw">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="row">
+                <div class="col-md-12"><input type="image" class="imagen" id="imagen" src="images/batmanvssuperman.jpg"></div> 
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+                    <h1 style="margin-left: 18%;">Batman VS Superman</h1></br>
+				</div>
+			</div>
+            <div class="row ">
+            <div class="col-md-11  bg-black bg-opacity-25 p-3 ">
+			<div class="row">
+                <div class="col-md-6 border  text-left autoTamano  ">
+        
+                    <label for="fecha"><font style=" font-weight:bold;" >Sesión:</font> </label>
+                    <input type="date" style="font-weight:bold; " id="fecha" name="fecha" value="2022-01-01" min="2022-01-01" max="2022-12-31">
+                    <span><button id="goToDate">-></button></span>
+                    
+            </div> 
+			</div>
+        </br>
+        
+			<div class="row " >
+				<div class="col-md-10  text-left autoTamano2">
+
+                 <ul class="list-group-horizontal d-flex flex-wrap horarios"> 
+                   <h5 style="text-align: left;">Horarios: </h5> <ul></ul>
+                
+                    
+                     
+                <button class="list-group-item bHora">09:00</button>
+                <button class="list-group-item bHora">15:15</button>
+                <button class="list-group-item bHora">18:45</button>
+                <button class="list-group-item bHora">22:30</button>
+                <button class="list-group-item bHora">22:30</button>
+                 
+                </ul>
+              
+				</div>
+               <label class="tamanyopequenyo" ><b>*Haz click en el horario deseado para comprar su entrada.</b></label> </br></br>
+			</div>
+		</div>
+    </div></div>
+
+		<div class="col-md-6 bg-black bg-opacity-25 p-3 tamBackground" >
+			<div class="row carta d-flex" >
+				<div class="col-md-12  tamBackground">
+                   <h2>Descripción</h2>     
+                   <b>Duración : </b> 151 minutos </br>
+                   <b>País : </b> Estados Unidos </br>
+                   <b>Género : </b> Acción, Aventura, Fantasía, Superhéroes </br>
+                   <b>Estreno : </b> 25 de Marco de 2016 </br>
+                   <b>Director : </b> Zack Snyder </br>
+                   <b>Guionistas : </b> Chris Terrio, David S.Goyer </br>
+                   <b>Actores principales : </b> Ben Affleck, Henry Cavill, Amy Adams, Jesse Eisenberg, Diane Lane, Laurence Fishburne, Jeremy Irons, Holly Hunter,Gal Gadot </br>
+                </br>
+
+				</div>
+			</div>
+			<div class="row  carta d-flex">
+				<div class="col-md-12">
+        </br>
+        <h2>Sinopsis</h2>
+        
+          <label>En un flashback, Bruce Wayne de niño cae en una cueva mientras huye del funeral de sus padres, donde tiene un encuentro con una colonia de murciélagos. En el presente, Bruce Wayne llega a Metrópolis al enterarse de que la ciudad está siendo atacada por kryptonianos, en donde el empresario llama desesperadamente a su hombre de confianza Jack O'Dwyer para que ordene la evacuación total del edificio de Empresas Wayne  <span id="dots">...</span><span id="more"> pero luego de una frenética carrera para llegar al lugar y para su infortunio el edificio termina siendo abordado por Superman y el General Zod, en donde este último apenas manifestaba sus rayos ópticos, los cuales destruyen las vigas de soporte lo que causa que el edificio se derrumbe y donde desafortunadamente Jack acaba muriendo antes de que logre salir. Mientras camina por las calles aledañas al edificio en ruinas, Bruce rápidamente corre a socorrer a uno de sus empleados llamado Wallace Keefe el cual tenía sus piernas rotas a causa de una viga y logran sacarlo, pero justo en ese momento observa a una niña llorando en las cercanías la cual rescata antes de que esta sea aplastada por un muro de escombros y Bruce trata de consolarla de que la ayudara a encontrar a su madre y si sabe en dónde está, pero la traumatizada niña le señala que su madre se encontraba precisamente en el edificio que está destruido lo que da a entender que también murió y se pone a llorar sobre Bruce. En ese momento observa la pelea entre Superman y el General Zod, quienes venían regresando de la atmósfera y se da cuenta de que su combate no solo ha cobrado la vida de O'Dwyer sino que también ha causado la muerte de decenas de personas y provocado una gran destrucción en la ciudad, por lo que Wayne ve a Superman como una amenaza potencial para la humanidad.
+
+            18 meses después de aquel incidente, tanto Gotham City como la ciudad de Metrópolis se han recuperado de la destrucción, pero tras la aparición de Superman, a pesar de sus incontables muestras de heroísmo y moralidad, en diferentes partes del mundo, la humanidad sigue debatiendo sobre él, el cual sigue siendo visto tanto como héroe, así como también una amenaza.
+            </label>
+          </span>
+        
+
+        <button onclick="myFunction()" id="myBtn" class ="bHora">Leer Mas</button>
+      </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

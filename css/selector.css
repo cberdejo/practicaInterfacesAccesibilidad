@@ -1,0 +1,74 @@
+#contadorEntradas {
+    border: none;
+}
+
+#plum{
+    background-color: plum;
+    max-width: 110%;
+    text-align: center;
+}
+#pagar{
+    background-color: red;
+    text-align: center;
+    color: white;
+}
+#pTotal{
+    text-align: center;
+    width: 85%;
+    background-color: white;
+}
+
+#selector{
+    background-color: lightgray;
+    height: 25cm;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+#contenido{
+    height: 20cm;
+    min-width: 30cm;
+}
+
+
+#ratio{
+   min-height: 100px;
+   margin-top: 10%;
+}
+
+.cant[type=number]{
+    width: 50px;
+    text-align: center;
+} 
+
+.precio[type=number]{
+    width: 50px;
+    text-align: center;
+} 
+
+#popUp{
+    display: none;
+    position: fixed;
+    left: 45%;
+    top: 45%;
+    transform: translate(-50%, 5%);
+    border: 3px solid black;
+    background-color: lightsalmon;
+    z-index: 9;
+}
+
+#background{
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    display: none;
+    height: 100%;
+    width: 100vw;
+    background-color: lightgrey;
+    opacity: 0.4;
+}
+
+.butaca{
+    vertical-align: middle;
+}

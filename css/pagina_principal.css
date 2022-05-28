@@ -1,0 +1,80 @@
+.carta {
+    background-color: #3B339B;
+    max-height: 480px;
+    margin: 1%;
+    width: 47%;
+    
+}
+
+@media screen and (max-width: 1080px) {
+    .carta {
+        min-width: 98%;
+    }
+}
+
+.informacion {
+    background-color: #F0A6BB;
+    padding: 2%;
+    max-width: 75%;
+}
+
+.fondo{
+    background-color: lightgray;
+}
+
+.slider-range {
+    padding-top: 25px;
+    padding-left: 20px;
+}
+
+#contenedorPeliculas {
+    padding: 2%;
+    min-width: 400px;
+}
+
+.imagen {
+    max-width: 25%;
+    min-width: 25%;
+    max-height: 280px;
+    min-width: 180px;
+    padding-right: 2%;
+}
+
+#fecha {
+    padding-left: 5px;
+}
+
+#selectorFecha {
+    max-width: 75%;
+    min-width: 50%;
+}
+
+.bHora {
+    height: 16.6%;
+    width: 16.6%;
+    background-color: #bfbfbf;
+    font-size: 12;
+    min-width: 80px;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 2%;
+}
+
+p {
+    font-size: 15pt;
+}
+
+.selector {
+    vertical-align: middle;
+    margin-bottom: 1%;
+    padding-top: 1%;
+}
+
+.textoSelector {
+    font-weight: bold;
+    font-size: x-large;
+}
+#mainContent {
+    max-width: 1920px;
+    min-width: 800px;
+}

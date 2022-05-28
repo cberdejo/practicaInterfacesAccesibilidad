@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link href="css/selector.css" rel="stylesheet">
+    <script src="js/controlBotones.js"></script>
+
+    <title>Cines Loquesea</title>
+</head>
+
+<body>
+
+    <header class="p-3 bg-black bg-opacity-25">
+        <div class="container-flex d-grid gap-3 mainContent">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="index.html" class="d-flex align-items-center mb-3 mb-md-auto me-md-auto text-dark text-decoration-none">
+                    <img class="bi me-2" src="images/logo.svg" alt="logo de la página" width="40" height="32"></img>
+                    <span class="fs-4 ">Cartelera</span>
+                </a>
+
+                <div>
+                    Bienvenido a cines Loquesea
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container p-5 mainContent">
+        <div class="row">
+            <div class="col-xl-2 col-6-sm border-dark border-end" id="info">
+                Película: Sample Text <br>
+                Hora: 00:00 <br>
+                Fecha: XX/XX/XXX <br>
+                Sala XX
+            </div>
+            <div class="container d-flex col-lg-8 col-sm-12" id="contadorEntradas">
+                <div class="col-4">
+                    Seleccione sus entradas: <br><br>
+                    &emsp;&emsp;&emsp;&emsp;Adulto:<br>
+                    &emsp;&emsp;&emsp;&emsp; Niño:<br>
+                    &emsp;&emsp;Adulto + Menú:<br><br>
+                    Total entradas: <input class="cant" type="number" size="2" style="text-align: center;" value="0"
+                        id="asientosSeleccionados" readonly>
+                </div>
+                <div class="col-8">
+                    <br>
+                    &nbsp;&nbsp;&nbsp;Cantidad: &emsp;&emsp;Precio: &emsp;&emsp;Subtotal: <br>
+                    <input type="image" src="images/arrow-left-circle.svg" name="leftOne" id="leftOne"
+                        onclick="less(1)" />
+                    <input class="cant" type="number" value="0" id="cantOne" disabled />
+                    <input type="image" src="images/arrow-right-circle.svg" name="rightOne" id="rightOne"
+                        onclick="more(1)" />
+                    &emsp;&emsp;&nbsp;8&euro;
+                    &emsp;&emsp;&emsp;&nbsp;<input class="precio" type="number" size="1" value="0"
+                        style="text-align: center;" id="precioOne" disabled /> &euro;
+                    <br>
+
+                    <input type="image" src="images/arrow-left-circle.svg" name="leftTwo" id="leftTwo"
+                        onclick="less(2)" />
+                    <input class="cant" type="number" size="1" value="0" id="cantTwo" disabled />
+                    <input type="image" src="images/arrow-right-circle.svg" name="rigthTwo" id="rigthTwo"
+                        onclick="more(2)" />
+                    &emsp;&emsp;&nbsp;6&euro;
+                    &emsp;&emsp;&emsp;&nbsp;<input class="precio" type="number" size="1" value="0"
+                        style="text-align: center;" id="precioTwo" disabled /> &euro;
+                    <br>
+
+                    <input type="image" src="images/arrow-left-circle.svg" name="leftThree" id="leftThree"
+                        onclick="less(3)" />
+                    <input class="cant" type="number" value="0" id="cantThree" disabled />
+                    <input type="image" src="images/arrow-right-circle.svg" name="rightThree" id="rightThree"
+                        onclick="more(3)" />
+                    &emsp;&emsp;15&euro;
+                    &emsp;&emsp;&emsp;<input class="precio" type="number" value="0" style="text-align: center;"
+                        id="precioThree" disabled /> &euro;
+                    <br>
+                </div>
+            </div>
+            <div class="list-group-item bg-black bg-opacity-25 col-lg-2 col-sm-4" id="pagoContainer">
+                <div class="row" id="plum">
+                    <div style="font-size: x-large">
+                        Total:
+                    </div>
+                </div>
+                <div class="row" style="font-size: 30px;">
+                    <div id="ratio">
+                        <input id="pTotal" type="number" value="0" disabled />
+                        &euro;
+                    </div>
+                </div>
+                <div class="row" style="font-size: 30px;">
+                    <button id="pagar" onclick="pagar()">Pagar</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mt-5" id="selector">
+            <div id="contenido">
+                <p>
+                    Para cambiar tu lugar asignado da click en el butaca deseada. <br>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Su butaca&emsp; Disponible&emsp; Ocupada &emsp;
+                    Asientos Disponibles: <input class="cant" type="number" id="asientosLibres"
+                        style="text-align: center;" size="2" value="0" readonly><br>
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;<img src="images/sofa verde.svg"
+                        height="60px">&emsp;&emsp;&nbsp;<img src="images/sofa.svg" height="60px">&emsp;&emsp;<img
+                        src="images/sofa rojo.svg" height="60px">
+                </p>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;1&emsp;&emsp;&emsp;&nbsp;2&emsp;&emsp;&emsp;3&emsp;&emsp;&emsp;&nbsp;4&emsp;&emsp;&emsp;&nbsp;5&emsp;&emsp;&emsp;&nbsp;6&emsp;&emsp;&emsp;7&emsp;&emsp;&emsp;&nbsp;8&emsp;&emsp;&emsp;&nbsp;9&emsp;&emsp;&emsp;10&emsp;&emsp;&nbsp;&nbsp;11&emsp;&emsp;&nbsp;&nbsp;12&emsp;&emsp;&nbsp;&nbsp;&nbsp;13&emsp;&emsp;&nbsp;&nbsp;14&emsp;&emsp;&nbsp;&nbsp;&nbsp;15&emsp;&emsp;&nbsp;&nbsp;&nbsp;16
+                <div class="row butacas"><span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;1&emsp;<input type="image"
+                            class="butaca" src="images/sofa.svg" height="60px" value="0" id="1"
+                            onclick="reservar(1)"><input type="image" class="butaca" src="images/sofa.svg" height="60px"
+                            value="0" id="2" onclick="reservar(2)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="3" onclick="reservar(3)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="4"
+                            onclick="reservar(4)"><input type="image" class="butaca" src="images/sofa.svg" height="60px"
+                            value="0" id="5" onclick="reservar(5)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="6" onclick="reservar(6)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="7"
+                            onclick="reservar(7)"><input type="image" class="butaca" src="images/sofa.svg" height="60px"
+                            value="0" id="8" onclick="reservar(8)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="9" onclick="reservar(9)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="10"
+                            onclick="reservar(10)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="11" onclick="reservar(11)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="12" onclick="reservar(12)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="13"
+                            onclick="reservar(13)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="14" onclick="reservar(14)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="15" onclick="reservar(15)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="16"
+                            onclick="reservar(16)"></div>
+                <div class="row butacas"><span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2&emsp;<input type="image"
+                            class="butaca" src="images/sofa.svg" height="60px" value="0" id="17"
+                            onclick="reservar(17)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="18" onclick="reservar(18)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="19" onclick="reservar(19)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="20"
+                            onclick="reservar(20)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="21" onclick="reservar(21)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="22" onclick="reservar(22)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="23"
+                            onclick="reservar(23)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="24" onclick="reservar(24)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="25" onclick="reservar(25)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="26"
+                            onclick="reservar(26)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="27" onclick="reservar(27)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="28" onclick="reservar(28)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="29"
+                            onclick="reservar(29)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="30" onclick="reservar(30)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="31" onclick="reservar(31)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="32"
+                            onclick="reservar(32)"></div>
+                <div class="row butacas"><span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;3&emsp;<input type="image"
+                            class="butaca" src="images/sofa.svg" height="60px" value="0" id="33"
+                            onclick="reservar(33)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="34" onclick="reservar(34)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="35" onclick="reservar(35)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="36"
+                            onclick="reservar(36)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="37" onclick="reservar(37)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="38" onclick="reservar(38)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="39"
+                            onclick="reservar(39)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="40" onclick="reservar(40)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="41" onclick="reservar(41)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="42"
+                            onclick="reservar(42)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="43" onclick="reservar(43)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="44" onclick="reservar(44)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="45"
+                            onclick="reservar(45)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="46" onclick="reservar(46)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="47" onclick="reservar(47)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="48"
+                            onclick="reservar(48)"></div>
+                <div class="row butacas"><span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;4&emsp;<input type="image"
+                            class="butaca" src="images/sofa.svg" height="60px" value="0" id="49"
+                            onclick="reservar(49)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="50" onclick="reservar(50)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="51" onclick="reservar(51)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="52"
+                            onclick="reservar(52)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="53" onclick="reservar(53)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="54" onclick="reservar(54)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="55"
+                            onclick="reservar(55)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="56" onclick="reservar(56)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="57" onclick="reservar(57)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="58"
+                            onclick="reservar(58)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="59" onclick="reservar(59)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="60" onclick="reservar(60)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="61"
+                            onclick="reservar(61)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="62" onclick="reservar(62)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="63" onclick="reservar(63)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="64"
+                            onclick="reservar(64)"></div>
+                <div class="row butacas"><span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;5&emsp;<input type="image"
+                            class="butaca" src="images/sofa.svg" height="60px" value="0" id="65"
+                            onclick="reservar(65)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="66" onclick="reservar(66)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="67" onclick="reservar(67)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="68"
+                            onclick="reservar(68)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="69" onclick="reservar(69)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="70" onclick="reservar(70)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="71"
+                            onclick="reservar(71)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="72" onclick="reservar(72)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="73" onclick="reservar(73)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="74"
+                            onclick="reservar(74)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="75" onclick="reservar(75)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="76" onclick="reservar(76)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="77"
+                            onclick="reservar(77)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="78" onclick="reservar(78)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="79" onclick="reservar(79)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="80"
+                            onclick="reservar(80)"></div>
+                <div class="row butacas"><span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;6&emsp;<input type="image"
+                            class="butaca" src="images/sofa.svg" height="60px" value="0" id="81"
+                            onclick="reservar(81)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="82" onclick="reservar(82)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="83" onclick="reservar(83)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="84"
+                            onclick="reservar(84)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="85" onclick="reservar(85)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="86" onclick="reservar(86)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="87"
+                            onclick="reservar(87)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="88" onclick="reservar(88)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="89" onclick="reservar(89)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="90"
+                            onclick="reservar(90)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="91" onclick="reservar(91)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="92" onclick="reservar(92)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="93"
+                            onclick="reservar(93)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="94" onclick="reservar(94)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="95" onclick="reservar(95)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="96"
+                            onclick="reservar(96)"></div>
+                <div class="row butacas"><span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;7&emsp;<input type="image"
+                            class="butaca" src="images/sofa.svg" height="60px" value="0" id="97"
+                            onclick="reservar(97)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="98" onclick="reservar(98)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="99" onclick="reservar(99)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="100"
+                            onclick="reservar(100)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="101" onclick="reservar(101)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="102" onclick="reservar(102)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="103"
+                            onclick="reservar(103)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="104" onclick="reservar(104)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="105" onclick="reservar(105)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="106"
+                            onclick="reservar(106)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="107" onclick="reservar(107)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="108" onclick="reservar(108)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="109"
+                            onclick="reservar(109)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="110" onclick="reservar(110)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="111" onclick="reservar(111)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="112"
+                            onclick="reservar(112)"></div>
+                <div class="row butacas"><span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;8&emsp;<input type="image"
+                            class="butaca" src="images/sofa.svg" height="60px" value="0" id="113"
+                            onclick="reservar(113)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="114" onclick="reservar(114)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="115" onclick="reservar(115)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="116"
+                            onclick="reservar(116)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="117" onclick="reservar(117)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="118" onclick="reservar(118)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="119"
+                            onclick="reservar(119)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="120" onclick="reservar(120)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="121" onclick="reservar(121)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="122"
+                            onclick="reservar(122)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="123" onclick="reservar(123)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="124" onclick="reservar(124)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="125"
+                            onclick="reservar(125)"><input type="image" class="butaca" src="images/sofa.svg"
+                            height="60px" value="0" id="126" onclick="reservar(126)"><input type="image" class="butaca"
+                            src="images/sofa.svg" height="60px" value="0" id="127" onclick="reservar(127)"><input
+                            type="image" class="butaca" src="images/sofa.svg" height="60px" value="0" id="128"
+                            onclick="reservar(128)"></div>
+                <div class="row butacas"><img src="images/rectangle.svg" width="35cm"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="loginPopup">
+        <div class="formPopup" id="popUp">
+            <form action="" autocomplete="off" class="container p-1">
+                <label for="tarjeta">
+                    <strong>Número de tarjeta</strong>
+                </label><br>
+                <input type="text" id="tarjeta" name="tarjeta" maxlength="16" minlength="16" size="16"required><br>
+                <label for="f1">
+                    <strong>Fecha de caducidad</strong>
+                </label>
+                &emsp;&emsp;
+                <label for="cs">
+                    <strong>Código secreto</strong>
+                </label><br>
+                
+                <input type="text" id="f1" size="2" name="f1" maxlength="2" minlength="1" required>/<input type="text" id="f2" size="2" name="f2" maxlength="2" minlength="1" required> &emsp;&emsp;&emsp;&emsp;
+                
+                <input type="text" id="cs" size="3" name="cs"maxlength="3" minlength="3" required><br>
+                <label for="email">
+                    <strong>Correo Electrónico</strong>
+                </label><br>
+                <input type="email" id="email" name="email" size="35" required>
+                <br><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <button type="button" onclick="comprar()"class="btn-info">Aceptar</button>
+                <button type="button" class="btn-danger" onclick="closeForm()">Cancelar</button> <br>
+
+            </form>
+        </div>
+    </div>
+    <div id="background"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+.fondo {
+    background-color: #3B339B;
+    padding:2%;   
+    margin:0%;
+      
+}
+.fondoGris{
+    background-color: lightgray;
+}
+
+.carta {
+    padding-top:-1%;
+    background-color: #F0A6BB;
+    min-width: 47%;
+    margin: 4px;    
+    
+}
+
+.carta2 {
+    padding-top: 3%;
+
+    background-color: #F0A6BB;
+    min-width: 47%;
+    margin: 4px;    
+    
+}
+
+.carta3{
+    
+        padding-top: 1%;
+        text-align: center;
+        background-color: #F0A6BB;
+        min-width: 47%;
+        margin: 4px;    
+        
+   
+}
+.slider-range {
+    padding-top: 25px;
+    padding-left: 20px;
+}
+
+#contenedorPeliculas {
+    padding: 2%;
+    min-width: 800px;
+}
+
+.imagen {
+    max-width: 75%;
+    min-width: 55%;
+    max-height: 530px;
+    min-width: 250px;
+   
+    padding-left: 20%;
+}
+
+#fecha {
+    padding-left: 5px;
+}
+
+#mainContent {
+    max-width: 1920px;
+    min-width: 800px;
+}
+
+.horarios {
+    margin-left: -2%;
+}
+
+.bHora {
+    background-color: #bfbfbf;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 3%;
+}
+
+body {
+    min-width: 700px;
+}
+
+p {
+    font-size: 15pt;
+    text-align: center;
+}
+
+h1{
+    text-align:center;
+}
+h2{
+    text-align: center;
+}
+label{
+    text-align:justify ;
+}
+#goToDate{
+    margin-bottom: 1%;
+}
+
+.tamanyopequenyo{
+    font-size: 13px;
+    margin-left: 5%;
+}
+
+.informacion2 {
+    background-color: lightsalmon;
+    padding: 2%;
+    max-width: 75%;
+ 
+}
+
+.tamBackground{
+    max-width:200%;
+    min-width: 50%;
+  
+}
+.maxw{
+    max-width:500%;
+    max-height: 500%;
+}
+#more {display: none;}
+   
